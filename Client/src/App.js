@@ -24,6 +24,7 @@ class App extends Component {
       .then(todos => this.setState({todos}));
   }
   handleAddTodo(todo){
+    console.log(todo);
     let todo1=this.state.todos;
     todo1.push(todo);
     this.setState({todos: todo1});
