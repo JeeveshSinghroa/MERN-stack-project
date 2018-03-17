@@ -17,11 +17,19 @@ class Todos extends Component {
           });
       }
     return (
-      <div className="Todos">
-      <div className="TodoHead">
-        <h3> Your To Do list.</h3>
+      <div className='container'>
+        <div className='row'>
+          <div className='col'/>
+          <div className='col'>
+          <h3>Tasks</h3>
+          </div>
+          <div className='col'/>
         </div>
-        {todoItems}
+        <div className='row'>
+          <div className='col'>
+            {todoItems}
+          </div>
+        </div>
       </div>
     );
   }

@@ -31,6 +31,17 @@ app.post('/api/todos',(req, res)=>{
         res.json(task);
     });
 });
+
+app.delete('/api/todos/:_id',(req, res) => {
+    var id = req.params._id;
+    Task.removeTask(id,(err, task) => {
+        if(err){
+            throw err;
+        }
+        res.json(task);
+    });
+});
+
 app.listen(5000,()=>{
     console.log(`Server started on port: 5000`);
 });

@@ -29,12 +29,11 @@ class AddTodo extends Component {
   render() {
       return(
         <div className="AddTodo">
-            <h2>Add Task</h2>
             <form onSubmit={this.handleSubmit.bind(this)}>
-                <div className="Div">
-                    <label className="App-title">Task</label><br/>
-                    <input className="Input" type="text"  ref="title" /><br/>
-                    <input className="Input" type="submit" value="Add" />
+                <div className='form-group'>
+                    <label for="exampleFormControlSelect1">Please Enter Task</label><br/>
+                    <input type="text" className='form-control' ref="title" /><br/>
+                    <input type="submit" className="btn btn-primary mb-2" value="Add" />
                 </div>
             </form>
         </div>
