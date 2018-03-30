@@ -8,20 +8,15 @@ class TodoItem extends Component {
     }
   render() {
     return (
-        <div className='container'>
-            <div className='row'>
-                <div className='col-9'>
-                    <ol className='breadcrumb'>
-                        <li>
-                            <strong>{this.props.todos.title}</strong>
-                        </li>
-                    </ol>
-                </div>
-                <div className='col'>    
-                    <button type='button' className='btn btn-danger btn-sm' 
-                    onClick={this.handleClick.bind(this,this.props.todos.id)}>Delete</button>
-                </div>
-            </div>
+        <div>
+            <ul className='list-group'>
+                <button type='button' className='list-group-item list-group-item-action' 
+                data-toggle="tooltip" data-placement="right" title="Click to Delete Task" 
+                onClick={this.handleClick.bind(this,this.props.todos.id,this.props.todos._id)}>
+                    {this.props.todos.title}
+                </button>
+
+            </ul>
         </div>
     );
   }

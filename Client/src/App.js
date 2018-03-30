@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import Todos from './Components/Todos';
 import AddTodo from './Components/AddTodo';
-import { Well } from 'react-bootstrap';
 
 class App extends Component {
 
@@ -44,21 +43,18 @@ class App extends Component {
     .then((data) => console.log(data))
     .catch((error) => console.log(error))
   }
-  handleDelete(_id){
-    fetch('/api/todos'+'/'+_id, {
-      method: 'DELETE',
+  handleDelete(id, _id){
+    
+    fetch('/api/todos'+'/'+id,{
+      method: 'delete',
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
+        'Accept':'application/json, text/plain, */*',
+        'Content-Type':'application/json'
       },
-      body: JSON.stringify({
-      })
     })
-    .then((res) => res.json())
-    .catch((error) => console.log(error))
 
     let todo1 = this.state.todos;
-    let index = todo1.findIndex(x => x._id===_id);
+    let index = todo1.findIndex(x => x.id===id);
     todo1.splice(index,1);
     this.setState({todos: todo1});
   }
@@ -79,7 +75,7 @@ class App extends Component {
           </div>
           <div className='col'/>
         </div>
-        </div>
+      </div>
     );
   }
 }

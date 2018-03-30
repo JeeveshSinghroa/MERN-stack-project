@@ -17,18 +17,12 @@ class Todos extends Component {
           });
       }
     return (
-      <div className='container'>
-        <div className='row'>
-          <div className='col'/>
-          <div className='col'>
-          <h3>Tasks</h3>
-          </div>
-          <div className='col'/>
-        </div>
-        <div className='row'>
-          <div className='col'>
-            {todoItems}
-          </div>
+      <div>
+        <div>
+          <h5 className='text-center'>Tasks</h5>
+        </div>    
+        <div>
+          {todoItems}
         </div>
       </div>
     );
