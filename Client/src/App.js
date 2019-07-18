@@ -44,7 +44,7 @@ class App extends Component {
     .catch((error) => console.log(error))
   }
   handleDelete(id, _id){
-    
+
     fetch('/api/todos'+'/'+id,{
       method: 'delete',
       headers: {
